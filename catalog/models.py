@@ -1,42 +1,30 @@
 from django.db import models
 
 
-# #
-#     наименование,
-#     описание,
-#     изображение (превью),
-#     категория,
-#     цена за штуку,
-#     дата создания,
-#     дата последнего изменения.
-#
-# Category:
-#
-#     наименование,
-#     описание.
+class Category(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Наименование')
+    description = models.CharField(max_length=255, verbose_name='Описание')
+
+    def __str__(self):
+        return f'{self.title}'
+
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
 
 class Product(models.Model):
-    title = models.CharField(max_length=100, verbose_name='наименование')
-    description = models.CharField(max_length=255, verbose_name='описание')
-    image = models.ImageField(verbose_name='изображение')
-    catgory = models.CharField(max_length=100, verbose_name='категория')
-    price = models.IntegerField(verbose_name='цена за штуку')
-    date_of_creation = models.DateField(auto_now=True, verbose_name='дата создания')
-    last_modified_date = models.DateTimeField(verbose_name='дата изменения')
+    title = models.CharField(max_length=255, verbose_name='Наименование')
+    description = models.CharField(max_length=255, verbose_name='Описание')
+    image = models.ImageField(verbose_name='Изображение')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+    price = models.IntegerField(verbose_name='Цена за штуку')
+    date_of_creation = models.DateField(auto_now=True, verbose_name='Дата создания')
+    last_modified_date = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
 
     def __str__(self):
-        return f'{self.title}' \
-               f'{self.description}' \
-               f'{self.catgory}' \
-               f'{self.price}' \
-               f'{self.date_of_creation}' \
-               f'{self.last_modified_date}'
+        return f'{self.title}'
 
-
-class Category(models.Model):
-    title = models.CharField(max_length=100, verbose_name='наименование')
-    description = models.CharField(max_length=255, verbose_name='описание')
-
-    def __str__(self):
-        return (f'{self.title}'
-                f'{self.description}')
+    class Meta:
+        verbose_name = 'Product'
+        verbose_name_plural = 'Produts'
