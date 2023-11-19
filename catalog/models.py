@@ -36,7 +36,6 @@ class Product(models.Model):
 class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name='наименование')
     description = models.CharField(max_length=255, verbose_name='описание')
-    created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return (f'{self.title}'
