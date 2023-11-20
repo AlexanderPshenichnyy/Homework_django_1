@@ -1,9 +1,11 @@
 from django.db import models
 
-
+NULLABLE = {
+    'null': True, 'blank': True
+}
 class Category(models.Model):
-    title = models.CharField(max_length=100, verbose_name='Наименование')
-    description = models.CharField(max_length=255, verbose_name='Описание')
+    name = models.CharField(max_length=100, verbose_name='Наименование')
+    description = models.CharField(max_length=255, **NULLABLE, verbose_name='Описание')
 
     def __str__(self):
         return f'{self.title}'
@@ -13,13 +15,14 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
 
+
 class Product(models.Model):
-    title = models.CharField(max_length=255, verbose_name='Наименование')
-    description = models.CharField(max_length=255, verbose_name='Описание')
-    image = models.ImageField(verbose_name='Изображение')
+    name = models.CharField(max_length=255, verbose_name='Наименование')
+    description = models.TextField(**NULLABLE,verbose_name='Описание')
+    photo = models.ImageField(upload_to='photos/', verbose_name='Изображение')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    price = models.IntegerField(verbose_name='Цена за штуку')
-    date_of_creation = models.DateField(auto_now=True, verbose_name='Дата создания')
+    price = models.IntegerField(**NULLABLE, verbose_name='Цена за штуку')
+    date_of_creation = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     last_modified_date = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
 
     def __str__(self):
