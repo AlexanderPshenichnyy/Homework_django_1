@@ -6,20 +6,20 @@ from catalog.models import Category, Product
 class Command(BaseCommand):
     def handle(self, *args, **options):
         categories_list = [
-            {'name': 'Одежда для животных', 'description': 'Широкий ассортимент'},
-            {'name': 'Холодное оружие', 'description': 'Широкий ассортимент'},
-            {'name': 'Соседи', 'description': 'Широкий ассортимент'}
+            {'title': 'Одежда для животных', 'description': 'Широкий ассортимент'},
+            {'title': 'Холодное оружие', 'description': 'Широкий ассортимент'},
+            {'title': 'Соседи', 'description': 'Широкий ассортимент'}
         ]
 
         product_list = [
-            {'name': 'Геннадий', 'description': 'Сосед Геннадий - отличается умом и сообразительностью',
+            {'title': 'Геннадий', 'description': 'Сосед Геннадий - отличается умом и сообразительностью',
              'category_id': 2,
              'price': 1000},
-            {'name': 'Пырялка-3000', 'description': 'Штык-нож', 'category_id': 1, 'price': 2000},
-            {'name': 'Свитер для питона', 'description': 'Вязаный свитер для вашего питона', 'category_id': 1,
+            {'title': 'Пырялка-3000', 'description': 'Штык-нож', 'category_id': 1, 'price': 2000},
+            {'title': 'Свитер для питона', 'description': 'Вязаный свитер для вашего питона', 'category_id': 1,
              'price': 10_000},
-            {'name': 'Пакет с прорезями', 'description': 'Просто отдайте коту', 'category_id': 1, 'price': 50},
-            {'name': 'Пусковая установка земля-земля', 'description': 'Запускать только с воздуха', 'category_id': 1,
+            {'title': 'Пакет с прорезями', 'description': 'Просто отдайте коту', 'category_id': 1, 'price': 50},
+            {'title': 'Пусковая установка земля-земля', 'description': 'Запускать только с воздуха', 'category_id': 1,
              'price': 50_000}
         ]
 
