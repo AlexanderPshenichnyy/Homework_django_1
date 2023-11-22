@@ -3,6 +3,8 @@ from django.db import models
 NULLABLE = {
     'null': True, 'blank': True
 }
+
+
 class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name='Наименование')
     description = models.CharField(max_length=255, **NULLABLE, verbose_name='Описание')
@@ -15,13 +17,12 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
 
-
 class Product(models.Model):
     title = models.CharField(max_length=255, verbose_name='Наименование')
-    description = models.TextField(**NULLABLE,verbose_name='Описание')
+    description = models.TextField(**NULLABLE, verbose_name='Описание')
     image = models.ImageField(upload_to='photos/', verbose_name='Изображение')
-    catgory = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    price = models.IntegerField(**NULLABLE, verbose_name='Цена за штуку')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+    price = models.IntegerField(**NULLABLE, verbose_name='Цена')
     date_of_creation = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     last_modified_date = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
 
