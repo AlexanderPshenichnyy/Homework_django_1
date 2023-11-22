@@ -20,8 +20,6 @@ class Command(BaseCommand):
              'price': 10_000},
             {'title': 'Пакет с прорезями', 'description': 'Просто отдайте коту', 'category_id': 1, 'price': 50},
             {'title': 'Пусковая установка земля-земля', 'description': 'Запускать только с воздуха', 'category_id': 2,
-             'price': 50_000},
-            {'title': 'Карандаш', 'description': 'Джон Уик, знает, что делать', 'category_id': 2,
              'price': 50_000}
         ]
 
