@@ -5,6 +5,10 @@ from catalog.models import Product, Category
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
+
+        Category.objects.all().delete()
+        Product.objects.all().delete()
+
         categories_list = [
             {'title': 'Одежда для животных', 'description': 'Широкий ассортимент'},
             {'title': 'Холодное оружие', 'description': 'Широкий ассортимент'},
