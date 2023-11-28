@@ -1,0 +1,42 @@
+{% extends 'catalog/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-2">
+                <h1 class="fw-light">Products</h1>
+                <p class="lead text-body-secondary">Something products</p>
+                <p>
+                    <a href="#" class="btn btn-primary my-2">Catalog</a>
+                    <a href="#" class="btn btn-secondary my-2">Products</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for object in object_list %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <strong class="card-text">{{ object.category }}</strong>
+                                <p class="card-text">{{ object }}</p>
+
+                            <div class="card-text">{{ object.description|truncatechars:100 }}</div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">{{ object.date_of_creation }}</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">{{ object.last_modified_date }}</button>
+                                </div>
+                                <small class="text-body-secondary">{{ object.price }}р.</small>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+    </div>
+{% endblock %}
