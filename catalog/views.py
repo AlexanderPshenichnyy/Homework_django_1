@@ -12,7 +12,6 @@ def contacts(request):
 
 def products(request):
     product_list = Product.objects.all()
-    price_list = Product.price
 
     context = {
         'title': 'Товары',
