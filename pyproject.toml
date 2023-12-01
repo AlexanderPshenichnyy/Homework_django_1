@@ -8,6 +8,7 @@ authors = ["Pshenichnyy Alexander"]
 python = "^3.10"
 Django = "^4.2.7"
 Pillow = "^10.1.0"
+pytils = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 

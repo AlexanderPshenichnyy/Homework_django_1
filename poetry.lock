@@ -42,6 +42,14 @@ docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline
 tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
+name = "pytils"
+version = "0.4.1"
+description = "Russian-specific string utils"
+category = "main"
+optional = false
+python-versions = "^3.7"
+
+[[package]]
 name = "sqlparse"
 version = "0.4.4"
 description = "A non-validating SQL parser."
@@ -73,12 +81,13 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "710e079ecba6b3f418ed610353704fb1b7c628fbab7683c2711f3450df6ab96b"
+content-hash = "c41fe18e92a8da45351edd08317a7a2ce48cb5584f62588c04e51e409dbf655f"
 
 [metadata.files]
 asgiref = []
 django = []
 pillow = []
+pytils = []
 sqlparse = []
 typing-extensions = []
 tzdata = []

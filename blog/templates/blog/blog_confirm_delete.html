@@ -10,11 +10,9 @@
                         <form method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             {{ form.as_p }}
-                            {% if object %}
-                                <button type="submit" class="btn btn-success">Update</button>
-                            {% else %}
-                                <button type="submit" class="btn btn-success">Create</button>
-                            {% endif %}
+                            <p>Confirm delete? -> "{{ object.title }}"</p>
+                            <button type="submit" class="btn btn-success">Confirm</button>
+                            <a href="{% url 'blog:view' object.pk %}" type="submit" class="btn btn-success">Cancel</a>
                         </form>
                     </div>
                 </div>
