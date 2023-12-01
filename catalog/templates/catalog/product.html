@@ -1,0 +1,21 @@
+{% extends 'catalog/base.html' %}
+{% load static %}
+{% load media_tags %}
+
+{% block content %}
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="col-12">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <strong class="card-text">{{ object.category }}</strong>
+                        <h2 class="card-text">{{ object }}</h2>
+                        <img class="card-img-top" src="{{ object.image|mediapath }}">
+                        <div class="card-text">{{ object.description }}</div>
+                        <small class="text-body-secondary">{{ object.price }}р.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

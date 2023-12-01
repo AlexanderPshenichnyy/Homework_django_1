@@ -42,6 +42,9 @@
                 <a href="/products" class="navbar-brand d-flex align-items-center">
                     <strong>Products</strong>
                 </a>
+                <a href="/blog" class="navbar-brand d-flex align-items-center">
+                    <strong>Blog</strong>
+                </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarHeader"
                             aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,8 +56,7 @@
 {% endblock %}
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">HomeStore</h1>
-    <p class="lead">HomeStore - это отличный вариант хранения ваших плагинов и примеров кода, который вы бы хотели
-        продать</p>
+    <p class="lead">HomeStore -  Magazine On Sofa</p>
 </div>
 {% block content %}
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -65,27 +67,15 @@
 {% endblock %}
 
 {% block footer %}
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
-        <div class="align-items-center"></div>
-        <div class="row">
-            <div class="row"></div>
-
-            <div class="col-1 col-lg">
-                <h5>Категории</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Рассылки</a></li>
-                    <li><a class="text-muted" href="#">Телеграм боты</a></li>
-                    <li><a class="text-muted" href="#">Полезные утилиты</a></li>
-                    <li><a class="text-muted" href="#">Веб-приложения</a></li>
-                    <li><a class="text-muted" href="#">Микросервисы</a></li>
-                </ul>
-            </div>
-            <div class="col-3 col-md">
-                HomeStore
-                <small class="d-block mb-3 text-muted">&copy; 2023</small>
-            </div>
-        </div>
-    </footer>
+    <footer class="text-body-secondary py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1">&copy; {% now 'Y' %}</p>
+    <p class="mb-0">HomeStore</p>
+  </div>
+</footer>
 
     <script src="/static/js/bootstrap.bundle.min.js"></script>
 {% endblock %}

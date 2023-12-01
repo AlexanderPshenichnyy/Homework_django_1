@@ -1,0 +1,20 @@
+{% extends 'catalog/homepage.html' %}
+
+{% block content %}
+
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div class="card align-items-center">
+                    <div class="card-body border">
+                        <form class="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-success">Создать</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
