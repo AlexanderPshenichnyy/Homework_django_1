@@ -4,22 +4,29 @@
 
 {% block content %}
     <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {% for object in object_list %}
-                <div class="col">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <strong class="card-text">{{ object.category }}</strong>
-                        <p class="card-text">{{ object }}</p>
-                        <img class="card-img-top" src="{{ object.image|mediapath }}" height="225">
-                        <div class="card-text">{{ object.description|truncatechars:100 }}</div>
-                            <a href="{% url 'catalog:product' object.pk %}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                            <small class="text-body-secondary">{{ object.price }}р.</small>
+        <div class="container">
+            <p><a class="btn btn-success mb-3" href="{% url 'catalog:product_create' %}"><strong>Add
+                product</strong></a></p>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for object in object_list %}
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <strong class="card-text">{{ object.category }}</strong>
+                                <p class="card-text">{{ object }}</p>
+                                <img class="card-img-top" src="{{ object.image|mediapath }}" height="225">
+                                <div class="card-text ">{{ object.description|truncatechars:100 }}</div>
+                                <p><small class="text-">{{ object.price }}р.</small></p>
+                                <a href="{% url 'catalog:product' object.pk %}" type="button"
+                                   class="btn btn-sm btn-outline-secondary">View</a>
+                                <a href="{% url 'catalog:product_update' object.pk %}" type="button"
+                                   class="btn btn-sm btn-outline-success ">Edit</a>
+                                <a href="{% url 'catalog:product_delete' object.pk %}" type="button"
+                                   class="btn btn-sm btn-outline-danger">Delete</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
             </div>
         </div>
     </div>

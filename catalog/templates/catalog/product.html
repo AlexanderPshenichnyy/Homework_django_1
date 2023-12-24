@@ -10,6 +10,15 @@
                     <div class="card-body">
                         <strong class="card-text">{{ object.category }}</strong>
                         <h2 class="card-text">{{ object }}</h2>
+                        <p>
+                            {% for v in version %}
+                                {{ v.number_of_version }}
+                                {% if v.title_of_version %}{{ v.title_of_version }}{% endif %}
+
+                                {% if not forloop.last %},{% endif %}
+
+                            {% endfor %}
+                        </p>
                         <img class="card-img-top" src="{{ object.image|mediapath }}">
                         <div class="card-text">{{ object.description }}</div>
                         <small class="text-body-secondary">{{ object.price }}р.</small>
