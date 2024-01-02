@@ -42,6 +42,17 @@ docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline
 tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
+name = "python-dotenv"
+version = "1.0.0"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+cli = ["click (>=5.0)"]
+
+[[package]]
 name = "pytils"
 version = "0.4.1"
 description = "Russian-specific string utils"
@@ -81,12 +92,13 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c41fe18e92a8da45351edd08317a7a2ce48cb5584f62588c04e51e409dbf655f"
+content-hash = "6d8ac3b191eab9f5a074343e32102a46b49890d6304243835952e319f895cf09"
 
 [metadata.files]
 asgiref = []
 django = []
 pillow = []
+python-dotenv = []
 pytils = []
 sqlparse = []
 typing-extensions = []

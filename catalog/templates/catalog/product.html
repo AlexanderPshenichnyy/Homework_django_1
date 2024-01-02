@@ -1,4 +1,5 @@
 {% extends 'catalog/base.html' %}
+{% load media_tags %}
 {% load static %}
 {% load media_tags %}
 
@@ -13,13 +14,11 @@
                         <p>
                             {% for v in version %}
                                 {{ v.number_of_version }}
-                                {% if v.title_of_version %}{{ v.title_of_version }}{% endif %}
-
+                                {{ v.title_of_version }}
                                 {% if not forloop.last %},{% endif %}
-
                             {% endfor %}
                         </p>
-                        <img class="card-img-top" src="{{ object.image|mediapath }}">
+                        <img class="card-img-top" src="{{ object.image|mediapath }}" alt="image">
                         <div class="card-text">{{ object.description }}</div>
                         <small class="text-body-secondary">{{ object.price }}р.</small>
                     </div>

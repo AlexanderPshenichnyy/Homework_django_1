@@ -36,46 +36,64 @@
                 <a href="/" class="navbar-brand d-flex align-items-center">
                     <strong>HomeStore</strong>
                 </a>
-                    <a href="/contacts" class="navbar-brand d-flex align-items-center">
-                        <strong>Contacts</strong>
-                    </a>
+                <a href="/contacts" class="navbar-brand d-flex align-items-center">
+                    <strong>Contacts</strong>
+                </a>
                 <a href="/products" class="navbar-brand d-flex align-items-center">
                     <strong>Products</strong>
                 </a>
                 <a href="{% url 'blog:blog' %}" class="navbar-brand d-flex align-items-center">
                     <strong>Blog</strong>
                 </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarHeader"
-                            aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'users:profile' %}" class="navbar-brand d-flex align-items-center">
+                        <strong>Profile</strong>
+                    </a>
+                    <a href="{% url 'users:logout' %}" class="navbar-brand d-flex align-items-center">
+                        <strong>LogOut</strong>
+                    </a>
+                    {% if user.first_name %}
+                        <small class="text-muted mt-1 me-2 py-2">Привет, {{ user.first_name }}!</small>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'users:login' %}" class="navbar-brand d-flex align-items-center">
+                        <strong>LogIn</strong>
+                    </a>
+                    <a href="{% url 'users:register' %}" class="navbar-brand d-flex align-items-center">
+                        <strong>Registration</strong>
+                    </a>
+                {% endif %}
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarHeader"
+                        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
         </div>
     </header>
 {% endblock %}
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">HomeStore</h1>
-    <p class="lead">HomeStore -  Magazine On Sofa</p>
+    <p class="lead">HomeStore - Magazine On Sofa</p>
 </div>
 {% block content %}
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">HomeStore</h1>
-    <p class="lead">HomeStore - это отличный вариант хранения ваших плагинов и примеров кода, который вы бы хотели
-        продать</p>
-</div>
+        <h1 class="display-4">HomeStore</h1>
+        <p class="lead">HomeStore - это отличный вариант хранения ваших плагинов и примеров кода, который вы бы хотели
+            продать</p>
+    </div>
 {% endblock %}
 
 {% block footer %}
     <footer class="text-body-secondary py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <p class="mb-1">&copy; {% now 'Y' %}</p>
-    <p class="mb-0">HomeStore</p>
-  </div>
-</footer>
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
+            <p class="mb-1">&copy; {% now 'Y' %}</p>
+            <p class="mb-0">HomeStore</p>
+        </div>
+    </footer>
 
     <script src="/static/js/bootstrap.bundle.min.js"></script>
 {% endblock %}

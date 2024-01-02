@@ -26,7 +26,7 @@ def check_title_and_description(phrase):
 class ProductForm(FormStyleMixin, forms.ModelForm):
     class Meta:
         model = Product
-        fields = '__all__'
+        exclude = ('owner',)
 
     def clean_title(self):
         cleaned_data = self.cleaned_data.get('title')
