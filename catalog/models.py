@@ -27,16 +27,21 @@ class Product(models.Model):
     date_of_creation = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     last_modified_date = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Владелец')
+    is_published = models.BooleanField(default=False, verbose_name='Признак публикации')
 
     def __str__(self):
         return f'{self.title}'
 
     class Meta:
-        """
-        Класс для представления категорий во множественном и единственном числе
-        """
         verbose_name = 'Product'
         verbose_name_plural = 'Produts'
+
+        permissions = [
+            (
+                'set_published_status',
+                'Can publish products'
+            ),
+        ]
 
 
 class Version(models.Model):

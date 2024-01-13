@@ -15,7 +15,6 @@ from dotenv import load_dotenv
 
 from django.conf.global_settings import AUTH_USER_MODEL
 
-
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
