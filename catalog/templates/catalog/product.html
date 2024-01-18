@@ -1,5 +1,4 @@
 {% extends 'catalog/base.html' %}
-{% load media_tags %}
 {% load static %}
 {% load media_tags %}
 
@@ -9,7 +8,7 @@
             <div class="col-12">
                 <div class="card shadow-sm h-100">
                     <div class="card-body">
-                        <strong class="card-text">{{ object.category }}</strong>
+                        <strong class="card-text">{{ categories }}</strong>
                         <h2 class="card-text">{{ object }}</h2>
                         <p>
                             {% for v in version %}

@@ -1,18 +1,23 @@
-from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
 from django.http import Http404
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.core.cache import cache
 from catalog.models import Category, Product, Version
 from catalog.forms import ProductForm, VersionForm
+from catalog.services import get_categories
+from config import settings
 
 
 class CategoryListView(ListView):
-    model = Category
-    template_name = 'catalog/homepage.html'
+    template_name = 'catalog/category_list.html'
+    context_object_name = 'categories'
+
+    def get_queryset(self):
+        return get_categories
 
 
 class ProductCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
@@ -96,7 +101,6 @@ class ProductDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
         context_data['version'] = Version.objects.filter(product=self.kwargs['pk'], sign_is_active=True)
-        print(context_data)
         return context_data
 
 
