@@ -1,0 +1,45 @@
+{% extends 'catalog/base.html' %}
+{% load static %}
+{% load media_tags %}
+
+{% block content %}
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            {% if user.is_authenticated %}
+                {% if perms.catalog.add_product %}
+                    <p><a class="btn btn-success mb-3" href="{% url 'catalog:product_create' %}">
+                        <strong>Add product</strong></a></p>
+                {% endif %}
+            {% endif %}
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for object in object_list %}
+                    {% if object.is_published %}
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <strong class="card-text">{{ object.category }}</strong>
+                                <p class="card-text">{{ object }}</p>
+                                <img class="card-img-top" src="{{ object.image|mediapath }}">
+                                <div class="card-text ">{{ object.description|truncatechars:100 }}</div>
+                                <p><small class="text-">{{ object.price }}р.</small></p>
+                                <a href="{% url 'catalog:product' object.pk %}" type="button"
+                                   class="btn btn-sm btn-outline-secondary">View</a>
+                                {% if user.is_authenticated %}
+                                {% if perms.catalog.change_product %}
+                                    <a href="{% url 'catalog:product_update' object.pk %}" type="button"
+                                       class="btn btn-sm btn-outline-success ">Edit</a>
+                                    {% endif %}
+                                    {% if perms.catalog.delete_product %}
+                                        <a href="{% url 'catalog:product_delete' object.pk %}" type="button"
+                                           class="btn btn-sm btn-outline-danger">Delete</a>
+                                        {% endif %}
+                                    {% endif %}
+                                    </div>
+                                    </div>
+                                    </div>
+                                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,182 @@
+[{
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {
+      "title": "Одежда для животных",
+      "description": "Широкий ассортимент"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {
+      "title": "Холодное оружие",
+      "description": "Широкий ассортимент"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 9,
+    "fields": {
+      "title": "Соседи",
+      "description": "Широкий ассортимент"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "title": "Геннадий",
+      "description": "Сосед Геннадий - отличается умом и сообразительностью. Любит сверлить в 5 утра,увлекается музыкой, если игру на грустном тромбоне можно называть музыкой.",
+      "image": "images/Gennadyy_6TNfXxv.png",
+      "category": 9,
+      "price": 1000,
+      "date_of_creation": "2023-11-30T16:23:02.096Z",
+      "last_modified_date": "2023-12-24T19:08:40.640Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "title": "Пырялка-2000",
+      "description": "Ножык",
+      "image": "images/knife_TzrqJEw.png",
+      "category": 8,
+      "price": 2000,
+      "date_of_creation": "2023-11-30T16:23:02.096Z",
+      "last_modified_date": "2023-12-24T19:10:39.863Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "title": "Сменная чешуя для питона",
+      "description": "Чешуя для вашего питона",
+      "image": "images/python_HgJIngV.png",
+      "category": 7,
+      "price": 10000,
+      "date_of_creation": "2023-11-30T16:23:02.096Z",
+      "last_modified_date": "2023-12-24T19:08:21.623Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "title": "Пакет с прорезями",
+      "description": "Просто отдайте коту",
+      "image": "images/pocket_EgihprF.png",
+      "category": 7,
+      "price": 50,
+      "date_of_creation": "2023-11-30T16:23:02.096Z",
+      "last_modified_date": "2023-11-30T16:55:03.765Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "title": "Пусковая установка земля-земля",
+      "description": "Запускать только с воздуха",
+      "image": "images/artellery_1HF12g2.png",
+      "category": 8,
+      "price": 50000,
+      "date_of_creation": "2023-11-30T16:23:02.096Z",
+      "last_modified_date": "2023-12-24T18:58:29.217Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "title": "Тряпа",
+      "description": "Отец",
+      "image": "images/artellery_1HF12g2_MsjrwJk.png",
+      "category": 7,
+      "price": 1,
+      "date_of_creation": "2023-12-24T18:57:49.713Z",
+      "last_modified_date": "2023-12-24T19:06:30.961Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "title": "аа",
+      "description": "ыыы",
+      "image": "images/artellery_1HF12g2_gmU0Adg.png",
+      "category": 7,
+      "price": 222,
+      "date_of_creation": "2023-12-24T19:07:02.297Z",
+      "last_modified_date": "2023-12-24T19:07:02.300Z"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 6,
+      "number_of_version": 1,
+      "title_of_version": "Gennady",
+      "sign_is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "product": 8,
+      "number_of_version": 2,
+      "title_of_version": "Ghbdtn",
+      "sign_is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 3,
+    "fields": {
+      "product": 6,
+      "number_of_version": 2,
+      "title_of_version": "Evgeniy",
+      "sign_is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "product": 7,
+      "number_of_version": 1,
+      "title_of_version": null,
+      "sign_is_active": true
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 8,
+    "fields": {
+      "title": "Торпэдо",
+      "slug": "torpedo",
+      "content": "Эдуард",
+      "preview": "preview/Gennadyy_6TNfXxv_OMcsHRk.png",
+      "date_of_creation": "2023-12-01T18:26:15.736Z",
+      "is_published": true,
+      "count_of_view": 3
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 9,
+    "fields": {
+      "title": "Pedro",
+      "slug": "pedro",
+      "content": "Pedrovich",
+      "preview": "preview/python_HgJIngV.png",
+      "date_of_creation": "2023-12-01T18:38:27.180Z",
+      "is_published": false,
+      "count_of_view": 0
+    }
+  }
+]

@@ -7,6 +7,10 @@ authors = ["Pshenichnyy Alexander"]
 [tool.poetry.dependencies]
 python = "^3.10"
 Django = "^4.2.7"
+Pillow = "^10.1.0"
+pytils = "^0.4.1"
+python-dotenv = "^1.0.0"
+redis = "^5.0.1"
 
 [tool.poetry.dev-dependencies]
 
